@@ -12,4 +12,5 @@ class Solution:
         
 ---> sample test cases passed.
 ---> TLE in larger inputs.
+---> Time Complexity: O(nk)
 
