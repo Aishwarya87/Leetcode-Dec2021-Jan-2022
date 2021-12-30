@@ -1,0 +1,15 @@
+class Solution:
+    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
+        n=len(nums) #5
+        for i in range(n-1): #4; 0 1 2 3
+            for j in range(i+1,i+k+1): #2+1 2+3+1
+                if j>=n:
+                    break
+                if abs(nums[i]-nums[j])<=t:
+                    return True
+        return False
+        
+        
+---> sample test cases passed.
+---> TLE in larger inputs.
+
