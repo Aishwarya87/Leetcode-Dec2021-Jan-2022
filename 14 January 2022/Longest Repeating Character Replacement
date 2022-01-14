@@ -1,0 +1,22 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        hm={}
+        longest= 0 
+        i=0
+        j=0
+        while(j<len(s)):
+            hm[s[j]]= hm.get(s[j],0) +1 
+            windowLen= j-i +1 #3
+            max_key = max(hm, key=hm.get) 
+            if windowLen-hm[max_key]>k: 
+                hm[s[i]]-=1
+                i+=1 #have to change the window
+            else:
+                longest= windowLen #4
+            j+=1
+        print(hm)
+        return longest
+            
+                
+#max_key looks into the hashmap routinely which increases the lookup time. The best way is to compare the previous max count and the current value.
+
