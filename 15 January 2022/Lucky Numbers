@@ -1,0 +1,10 @@
+class Solution:
+    def isLucky(self, n): 
+        pos=n
+        for i in range(2,n+1):
+            if pos%i==0:
+                return False
+            pos= pos-pos//i
+        return True
+        
+
