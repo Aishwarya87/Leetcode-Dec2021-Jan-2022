@@ -1,0 +1,20 @@
+def migratoryBirds(arr):
+    dict1={}
+    for i in arr:
+        if i in dict1:
+            dict1[i]+=1
+        else:
+            dict1[i]=1
+    large=0
+    for val in dict1.values():
+        if large<val:
+            large=val
+    lst=[]
+    for k,v in dict1.items():
+        if v==large:
+            lst.append(k)
+    
+    return min(lst)
+    # Write your code here
+    
+    
