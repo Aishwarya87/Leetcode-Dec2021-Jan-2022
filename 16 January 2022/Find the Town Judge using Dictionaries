@@ -1,0 +1,25 @@
+from collections import defaultdict
+class Solution:
+    def findJudge(self, n: int, trust: List[List[int]]) -> int:
+        if not trust:
+            if n==1:
+                return 1
+            
+            else: return -1
+        dict1 = defaultdict(list)
+        for i,j in trust:
+            dict1[i].append(j)
+        judge=-1
+        for i in range(1,n+1):
+            if i not in dict1.keys():
+                judge=i
+        # everyone should trust him
+        print(judge)
+        print(dict1)
+        for i in range(1,n+1):
+            if i!=judge and i in dict1:
+                if judge not in dict1[i]:
+                    judge=-1
+        return judge
+        
+        
