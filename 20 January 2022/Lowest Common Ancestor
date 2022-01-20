@@ -20,7 +20,7 @@ class Solution:
         # print(root1)
         # print(root2)
         if l and r:
-            return root
+            return root   #in the backend implementation, the code returns root.val
         if l and not r:
             return l
         if not l and r:
