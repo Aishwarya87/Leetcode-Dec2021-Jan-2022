@@ -1,0 +1,20 @@
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+        lst=[]
+        n=num
+        num=abs(num)
+        if not num:
+            return str(num)
+        while(num):
+            lst.append(num%7)
+            num //=7
+        newLst=[]
+        for i in range(len(lst)-1,-1,-1):
+            newLst.append(lst[i])
+        if n<0:
+            x= ''.join(str(ele)for ele in newLst)
+            return '-'+x
+        else:
+            return ''.join(str(ele)for ele in newLst)
+        
+        
