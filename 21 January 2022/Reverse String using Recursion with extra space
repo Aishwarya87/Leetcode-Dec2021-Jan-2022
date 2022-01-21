@@ -1,0 +1,12 @@
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        new=[]
+        def reverse1(s,new):
+            if len(s)==0:
+                return new
+            return reverse1(s[1:],[s[0]]+new)
+           
+        return (reverse1(s,new))
+        
+        
+        
