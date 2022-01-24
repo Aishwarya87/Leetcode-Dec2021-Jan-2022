@@ -1,0 +1,19 @@
+class Solution:
+    def detectCapitalUse(self, word: str) -> bool:
+        allupper=0
+        alllower=0
+        mixed=0
+        for i in range(len(word)):
+            if word[i].isupper():
+                allupper+=1
+                if i==0:
+                    mixed+=1
+            elif word[i].islower():
+                alllower+=1
+                if i !=0:
+                    mixed+=1
+        if allupper==len(word) or alllower==len(word) or mixed==len(word):
+            return True
+        else:
+            return False
+
