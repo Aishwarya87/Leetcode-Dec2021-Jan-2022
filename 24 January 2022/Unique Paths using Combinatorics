@@ -1,0 +1,28 @@
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        #combinatorics: ncr= n!/r!(n-r)!
+        # one path: rrrrrrdd = 8!/ 6!2!
+        m= m-1
+        n=n-1
+        m = m+n
+        
+            
+        x,y= 1,1
+        
+        for i in range(m,0,-1):
+            x= x*i
+            
+        for i in range(n,0,-1):
+            y= y*i
+            
+        z= m-n
+        z1=1
+        for i in range(z,0,-1):
+            z1= z1*i
+        print(x)
+        print(y)
+        print(m)
+        print(n)
+        return (x//(y*z1))
+        
+        
