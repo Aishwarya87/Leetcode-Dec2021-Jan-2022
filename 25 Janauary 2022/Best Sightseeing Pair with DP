@@ -1,0 +1,12 @@
+class Solution:
+    def maxScoreSightseeingPair(self, values: List[int]) -> int:
+        n = len(values)
+        X=0
+        Y=values[n-1]-(n-1)
+        
+        for i in range(n-2,-1,-1):
+            Y = max(Y,values[i+1]-(i+1))
+            X= max(X, values[i]+i+Y)
+        return X
+        
+        
