@@ -1,0 +1,24 @@
+class Solution:
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        dict1={}
+        i=0
+        for o in order:
+            dict1[o]=i 
+            i+=1
+        print(dict1)
+        for i in range(0,len(words)-1):
+            x= words[i]
+            y= words[i+1]
+            count=0
+            
+            for i in range(min(len(y), len(x))):
+                if dict1[x[i]]<dict1[y[i]]:
+                    break
+                elif dict1[x[i]]>dict1[y[i]]:
+                    return False
+                else:
+                    count+=1
+            if count==len(y) and len(y)!= len(x):
+                return False
+        return True
+        
