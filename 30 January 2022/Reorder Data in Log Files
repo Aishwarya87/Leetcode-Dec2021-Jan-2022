@@ -1,0 +1,27 @@
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        letter_log=[]
+        digit_log=[]
+        
+        for log in logs:
+            x= log.split()
+            if x[1].isdigit():
+                digit_log.append(log)
+            else:
+                letter_log.append(log.split())
+        
+        print(letter_log)
+        letter_log.sort(key= lambda x:x[0])
+        letter_log.sort(key= lambda x:x[1:])
+        
+        print(letter_log)
+        newLog=[]
+        for log in letter_log:
+            newLog.append(" ".join(log))
+        print(newLog)
+        for x in digit_log:
+            
+            newLog.append(x)
+        return newLog
+        
+        
